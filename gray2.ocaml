@@ -1,0 +1,8 @@
+let rec f a b c=if b=0 then[a]else(f(a@[c])(b-1)0)@(f(a@[1-c])(b-1)1);;let gray a=f[]a 0;;
+
+let print_int x = Printf.printf "%d " x;;
+let print_list x = Printf.printf "[ "; List.iter print_int x; Printf.printf "] ";;
+let print_list_list x = Printf.printf "[ "; List.iter print_list x; Printf.printf "] ";;
+
+print_list_list (gray 4);
+Printf.printf "\n";;
